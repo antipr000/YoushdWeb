@@ -19,9 +19,6 @@ export default function AddTransaction({ users, transactions }) {
         
         if(userId === null || amount === 0) {
             window.alert("Enter correct value of user id and amount");
-        } else if(referralUrl !== null && 
-            transactions.filter(transaction => transaction.referralUrl === referralUrl)[0].amount !== amount) {
-                window.alert("Amount cannot be different from referral amount")
         } else {
             try{
                 await axios.post(`${BASE_URL}/transaction`, {
